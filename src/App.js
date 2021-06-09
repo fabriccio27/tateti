@@ -1,7 +1,10 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import Movements from './components/Movements';
 import ButtonRow from './components/ButtonRow';
+import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class App extends React.Component {
   state = {
@@ -157,7 +160,7 @@ class App extends React.Component {
     const winnerJSX = (
       <div>
         <h2>Felicitaciones {this.state.winner}!</h2>
-        <button onClick={this.resetGame} className="reset-btn">Reset game <i class="fas fa-sync-alt"></i></button>
+        <button onClick={this.resetGame} className="reset-btn">Reset game <FontAwesomeIcon icon={faSyncAlt}/></button>
       </div>
     );
     return(
