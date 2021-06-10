@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+}
+.page-title{
+  margin:2rem 0;
+}
+.clickable {
+  width:100px;
+  height:100px; 
+}
+.clickable:disabled{
+  background:rgb(250, 208, 215);
+  margin:0;
+}
+
+.reset-btn{
+  padding:1rem;
+  border:none;
+  background:none;
+  font-weight:300;
+  margin:1.25rem 0;
+}
+.reset-btn:hover{
+  background-color:rgb(143, 219, 143);
+  border:1px solid white;
+  border-radius:2px;
+  color:white;
+}
+.goTo-btn {
+  background-color:transparent;
+  border:none;
+}
