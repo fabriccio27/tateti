@@ -5,6 +5,7 @@ import Movements from './components/Movements';
 import ButtonRow from './components/ButtonRow';
 import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CurrentPlayer from "./components/CurrentPlayer";
 
 class App extends React.Component {
   state = {
@@ -34,7 +35,7 @@ class App extends React.Component {
     });
   };
   goBack = (goTo) =>{
-    //tengo que rescribir jugadas y grilla
+    //tengo que re-escribir jugadas y grilla
     let pastGrid = [
       [0,0,0],
       [0,0,0],
@@ -65,7 +66,7 @@ class App extends React.Component {
     let yCoord = 0;
     if(grid[0][0]===grid[0][1] && grid[0][1]===grid[0][2] && grid[0][0]!==0){
       oneWin=true;
-    }else if(grid[1][0]===grid[1][1] && grid[1][1]===grid[1][2] && grid[1][0]!==0){
+    } else if(grid[1][0]===grid[1][1] && grid[1][1]===grid[1][2] && grid[1][0]!==0){
       oneWin=true;
       xCoord = 1;
     } else if(grid[2][0]===grid[2][1] && grid[2][1]===grid[2][2] && grid[2][0]!==0){
@@ -167,6 +168,8 @@ class App extends React.Component {
       <div>
         <h3 className="page-title">Area de juego</h3>
         {this.state.isFinished && winnerJSX}
+        {!this.state.isFinished && <CurrentPlayer isPlayerOne={this.state.isPlayerOne} />}
+        
         <div className="row">
           <div className="col-sm-12 col-md-6">
             <ButtonRow rowIndex={0} row={this.state.grid[0]} isFinished={this.state.isFinished} playHandler={this.playHandler}/>
